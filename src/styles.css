@@ -1,0 +1,452 @@
+:root {
+  --bg: #0f1720;
+  --card: #0b1220;
+  --muted: #9aa5b1;
+  --accent: #2b8cff;
+  --text: #e6eef6;
+  --danger: #ff6b6b;
+  font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+  color-scheme: dark;
+}
+
+/* basic reset */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #08101a 0%, #07121b 100%);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* layout */
+.container {
+  max-width: 1000px;
+  margin: 18px auto;
+  padding: 0 16px;
+}
+
+/* center page for login */
+.center-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* card */
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 18px rgba(2, 6, 23, 0.6);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* form */
+label {
+  font-weight: 600;
+  font-size: 14px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  outline: none;
+}
+input:focus {
+  box-shadow: 0 0 0 3px rgba(43, 140, 255, 0.12);
+  border-color: var(--accent);
+}
+
+/* header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+.brand a {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* buttons */
+.btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+}
+.btn.primary {
+  background: var(--accent);
+  color: #001;
+  border: none;
+}
+.btn.ghost {
+  opacity: 0.9;
+}
+.btn.small {
+  padding: 6px 8px;
+  font-size: 14px;
+}
+.btn.danger {
+  background: var(--danger);
+  border: none;
+  color: #111;
+}
+
+/* muted text */
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: 13px;
+}
+
+/* filter bar */
+.filterbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+.filterbar input {
+  width: 100%;
+}
+.skill-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.chip {
+  border-radius: 999px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  background: transparent;
+}
+.chip.active {
+  background: rgba(43, 140, 255, 0.12);
+  border-color: var(--accent);
+}
+.view-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+/* experience layout */
+.experience-section {
+  margin-top: 8px;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* resume card */
+.resume-card .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.resume-card .summary {
+  margin: 8px 0;
+  color: var(--muted);
+}
+.highlights {
+  margin-top: 8px;
+}
+.highlights li {
+  margin: 6px 0;
+}
+
+/* timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.timeline-meta {
+  width: 160px;
+  flex-shrink: 0;
+}
+.timeline-body {
+  flex: 1;
+}
+
+/* empty state */
+.empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* error */
+.error {
+  background: rgba(255, 0, 0, 0.06);
+  border: 1px solid rgba(255, 0, 0, 0.12);
+  color: var(--danger);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* card visuals */
+.card {
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.7);
+}
+
+/* responsive (mobile-first) */
+@media (min-width: 760px) {
+  .filterbar {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* print styles: show only main content for print */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .site-header,
+  .filterbar,
+  .header-actions,
+  .btn {
+    display: none !important;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0;
+  }
+  .card {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* accessibility helper */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* -----------------------------------------
+   🌟 Dynamic Login Page Enhancements
+------------------------------------------ */
+.login-page {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* animated background */
+.bg-animation {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 20%, #1a1a1a, #0b0f12, #11161b);
+  animation: softGlow 15s ease-in-out infinite alternate;
+  z-index: -1;
+  filter: blur(100px);
+}
+
+@keyframes softGlow {
+  0% {
+    background: radial-gradient(circle at 25% 20%, #0b0f12, #11161b, #1a1a1a);
+  }
+  50% {
+    background: radial-gradient(circle at 70% 80%, #0f1418, #0b0f12, #1c1c1c);
+  }
+  100% {
+    background: radial-gradient(circle at 40% 40%, #0b0f12, #161b20, #0a0d10);
+  }
+}
+
+
+/* glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px 28px;
+  width: 100%;
+  max-width: 400px;
+  color: #f0f4ff;
+}
+
+.password-wrapper {
+  position: relative;
+}
+.password-wrapper .show-btn {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 8px;
+}
+.remember input {
+  accent-color: var(--accent);
+}
+
+.login-btn {
+  width: 100%;
+  font-weight: 600;
+  margin-top: 8px;
+  padding: 10px 0;
+}
+
+/* animations & responsiveness */
+@media (max-width: 480px) {
+  .glass-card {
+    padding: 24px 20px;
+  }
+}
+/* ----------------------------------------
+   🌟 Enhanced Resume Card Styling
+----------------------------------------- */
+.enhanced-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.enhanced-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55);
+}
+
+.job-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.job-icon {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.job-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.company-name {
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+}
+
+.date {
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.toggle-btn {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.highlights-list {
+  margin-top: 8px;
+  padding-left: 18px;
+  list-style: none;
+  color: var(--muted);
+}
+.highlights-list li {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}

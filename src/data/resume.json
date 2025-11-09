@@ -1,0 +1,45 @@
+{
+  "basics": {
+    "name": "Manish Mahawar",
+    "label": "Frontend Developer",
+    "email": "manish@example.com",
+    "summary": "Frontend developer experienced with React and building accessible, responsive interfaces."
+  },
+  "skills": ["React", "JavaScript", "HTML", "CSS", "TypeScript", "Git", "Tailwind"],
+  "work": [
+    {
+      "id": "w1",
+      "company": "Algokart",
+      "position": "Frontend Intern",
+      "startDate": "2024-06-01",
+      "endDate": "2024-12-01",
+      "summary": "Built interactive UI components and optimized bundle size.",
+      "highlights": ["Built interactive resume UI", "Improved accessibility", "Wrote unit tests"]
+    },
+    {
+      "id": "w2",
+      "company": "Acme Corp",
+      "position": "Junior Frontend Engineer",
+      "startDate": "2022-10-01",
+      "endDate": "2024-05-30",
+      "summary": "Worked on web apps with React and REST APIs.",
+      "highlights": ["Migrated to React 18", "Performance tuning"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Example University",
+      "area": "Computer Science",
+      "startDate": "2019-08-01",
+      "endDate": "2023-05-31",
+      "gpa": "8.6"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Campus Recruitment Portal",
+      "description": "A portal to manage campus hiring with multiple roles.",
+      "technologies": ["React", "MongoDB", "Cloudinary"]
+    }
+  ]
+}
